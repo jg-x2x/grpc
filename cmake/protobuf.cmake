@@ -55,6 +55,7 @@ if(gRPC_PROTOBUF_PROVIDER STREQUAL "module")
     set(gRPC_INSTALL FALSE)
   endif()
 elseif(gRPC_PROTOBUF_PROVIDER STREQUAL "package")
+  hunter_add_package(Protobuf)
   find_package(Protobuf REQUIRED CONFIG)
 
   if(Protobuf_FOUND OR PROTOBUF_FOUND)
